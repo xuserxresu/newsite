@@ -1,6 +1,7 @@
 {
   "name": "it-solutions-architect",
   "version": "0.1.0",
+  "homepage": "https://xuserxresu.github.io/newsite",
   "private": true,
   "dependencies": {
     "atropos": "^2.0.2",
