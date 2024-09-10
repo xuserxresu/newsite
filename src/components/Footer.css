@@ -1,0 +1,42 @@
+.footer {
+  position: relative;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  padding: 2rem 0;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.footer-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--tertiary-color), var(--primary-color));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  opacity: 0.3;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.footer-content p {
+  color: var(--light-color);
+}

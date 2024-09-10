@@ -1,0 +1,110 @@
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem; /* Reduced padding for mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.contact-card {
+  background-color: rgba(46, 7, 63, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem; /* Reduced padding for mobile */
+  border-radius: 15px; /* Slightly reduced border-radius */
+  border: 1px solid rgba(173, 73, 225, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Reduced margin */
+}
+
+.hero h1 {
+  color: var(--light-color);
+  font-size: 2.5rem; /* Reduced font size for mobile */
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  color: var(--tertiary-color);
+  font-size: 1.1rem; /* Slightly reduced font size */
+}
+
+.contact-content p {
+  color: var(--text-color);
+  margin-bottom: 1.5rem; /* Reduced margin */
+  font-size: 1rem; /* Reduced font size */
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  font-size: 1rem; /* Reduced font size */
+}
+
+.contact-form textarea {
+  min-height: 120px; /* Reduced height */
+}
+
+.cta-button {
+  padding: 0.8rem 2rem; /* Reduced padding */
+  font-size: 1.1rem; /* Reduced font size */
+  margin-top: 0.5rem;
+}
+
+.social-links {
+  margin-top: 1.5rem; /* Reduced margin */
+  display: flex;
+  justify-content: center;
+}
+
+.social-links a {
+  color: var(--light-color);
+  margin: 0 1rem;
+  font-size: 1.5rem; /* Reduced font size */
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--tertiary-color);
+}
+
+@media (min-width: 768px) {
+  .contact {
+    padding: 4rem 2rem;
+  }
+
+  .contact-card {
+    padding: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .contact-content p {
+    font-size: 1.1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1.1rem;
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
+  }
+}
