@@ -22,22 +22,23 @@
 
 .hero {
   text-align: center;
-  margin-bottom: 1.5rem; /* Reduced margin */
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
 }
 
 .hero h1 {
   color: var(--light-color);
   font-size: 2.5rem; /* Reduced font size for mobile */
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem; /* Reduced from 0.5rem */
 }
 
 .tagline {
   color: var(--tertiary-color);
   font-size: 1.1rem; /* Slightly reduced font size */
+  margin-bottom: 1rem; /* Added to create space between tagline and content */
 }
 
 .intro, .mission, .certifications {
-  margin-bottom: 1.5rem; /* Reduced margin */
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
 }
 
 .intro p, .mission p {

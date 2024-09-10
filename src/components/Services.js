@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Services.css';
 
 function Services() {
@@ -44,12 +45,10 @@ function Services() {
   return (
     <div className="services fade-in">
       <div className="services-card">
-        <section className="hero">
-          <h1><i className="fas fa-cogs"></i> Our Services</h1>
-          <p className="tagline">Comprehensive IT solutions for your business needs</p>
-        </section>
-
-        <section className="service-list">
+        <h1><i className="fas fa-cogs"></i> What I Do</h1>
+        <p className="tagline">Comprehensive IT solutions for your business needs</p>
+        
+        <div className="service-list">
           {services.map((service) => (
             <div key={service.id} className="service-item">
               <i className={service.icon}></i>
@@ -57,13 +56,13 @@ function Services() {
               <p>{service.description}</p>
             </div>
           ))}
-        </section>
+        </div>
 
-        <section className="call-to-action">
+        <div className="call-to-action">
           <h2>Ready to elevate your IT infrastructure?</h2>
-          <p>Let's discuss how our services can benefit your business.</p>
-          <a href="/contact" className="cta-button">Get in Touch</a>
-        </section>
+          <p>Let's chat about how I can help your business thrive.</p>
+          <Link to="/contact" className="cta-button">Get in Touch</Link>
+        </div>
       </div>
     </div>
   );

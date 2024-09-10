@@ -1,7 +1,7 @@
 .contact {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem; /* Reduced padding for mobile */
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,99 +12,163 @@
   background-color: rgba(46, 7, 63, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 2rem 1.5rem; /* Reduced padding for mobile */
-  border-radius: 15px; /* Slightly reduced border-radius */
+  padding: 3rem;
+  border-radius: 20px;
   border: 1px solid rgba(173, 73, 225, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 1.5rem; /* Reduced margin */
-}
-
-.hero h1 {
+.contact h1 {
   color: var(--light-color);
-  font-size: 2.5rem; /* Reduced font size for mobile */
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .tagline {
   color: var(--tertiary-color);
-  font-size: 1.1rem; /* Slightly reduced font size */
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.contact-content p {
-  color: var(--text-color);
-  margin-bottom: 1.5rem; /* Reduced margin */
-  font-size: 1rem; /* Reduced font size */
-  line-height: 1.5;
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  margin-bottom: 1rem;
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: var(--light-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
   padding: 0.8rem;
-  font-size: 1rem; /* Reduced font size */
+  border: 1px solid rgba(173, 73, 225, 0.3);
+  border-radius: 8px;
+  background-color: rgba(46, 7, 63, 0.2);
+  color: var(--light-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.contact-form textarea {
-  min-height: 120px; /* Reduced height */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--tertiary-color);
+  box-shadow: 0 0 0 2px rgba(173, 73, 225, 0.2);
 }
 
-.cta-button {
-  padding: 0.8rem 2rem; /* Reduced padding */
-  font-size: 1.1rem; /* Reduced font size */
-  margin-top: 0.5rem;
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  background-color: var(--light-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(173, 73, 225, 0.4);
+}
+
+.contact-info {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contact-info h2 {
+  color: var(--light-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .social-links {
-  margin-top: 1.5rem; /* Reduced margin */
   display: flex;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .social-links a {
   color: var(--light-color);
-  margin: 0 1rem;
-  font-size: 1.5rem; /* Reduced font size */
-  transition: color 0.3s ease;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(173, 73, 225, 0.2);
+  text-decoration: none; /* Remove underline */
 }
 
 .social-links a:hover {
-  color: var(--tertiary-color);
+  background-color: transparent;
+  transform: translateY(-3px);
+}
+
+/* Specific hover colors for each social icon */
+.social-links a[aria-label="LinkedIn"]:hover {
+  color: #0077B5; /* LinkedIn blue */
+}
+
+.social-links a[aria-label="Twitter"]:hover {
+  color: #1DA1F2; /* Twitter blue */
+}
+
+.social-links a[aria-label="Email"]:hover {
+  color: #D44638; /* Gmail red */
 }
 
 @media (min-width: 768px) {
-  .contact {
-    padding: 4rem 2rem;
+  .contact-content {
+    flex-direction: row;
   }
 
-  .contact-card {
-    padding: 3rem;
+  .contact-form {
+    flex: 1;
   }
 
-  .hero h1 {
-    font-size: 3rem;
+  .contact-info {
+    flex: 1;
+    margin-top: 0;
+    text-align: left;
   }
 
-  .contact-content p {
-    font-size: 1.1rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1.1rem;
-  }
-
-  .social-links a {
-    font-size: 1.8rem;
+  .social-links {
+    justify-content: flex-start;
   }
 }

@@ -11,6 +11,11 @@ function Header() {
     document.body.style.overflow = menuOpen ? 'auto' : 'hidden'; // Prevent scrolling when menu is open
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -34,10 +39,10 @@ function Header() {
         </div>
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
           <ul>
-            <li><NavLink to="/" end onClick={toggleMenu}>Home</NavLink></li>
-            <li><NavLink to="/services" onClick={toggleMenu}>Services</NavLink></li>
-            <li><NavLink to="/about" onClick={toggleMenu}>About</NavLink></li>
-            <li><NavLink to="/contact" onClick={toggleMenu}>Contact</NavLink></li>
+            <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
+            <li><NavLink to="/services" onClick={closeMenu}>What I Do</NavLink></li>
+            <li><NavLink to="/about" onClick={closeMenu}>About</NavLink></li>
+            <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
           </ul>
         </nav>
         <button className="menu-toggle" onClick={toggleMenu}>
@@ -46,7 +51,7 @@ function Header() {
           <span></span>
         </button>
       </div>
-      <div className="menu-overlay" onClick={toggleMenu}></div>
+      <div className="menu-overlay" onClick={closeMenu}></div>
     </header>
   );
 }
