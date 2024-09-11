@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
@@ -33,10 +33,10 @@ function Header() {
   return (
     <header className={`${menuOpen ? 'menu-open' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo">
-          <span className="logo-icon"><i className="fas fa-code"></i></span>
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <img src="/images/sharfi_grey.png" alt="Ahmed Sharfi Logo" className="logo-image" />
           <span className="logo-text">Ahmed Sharfi</span>
-        </div>
+        </Link>
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>

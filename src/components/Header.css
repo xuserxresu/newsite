@@ -27,8 +27,7 @@ header.scrolled {
   display: flex;
   align-items: center;
   color: var(--light-color);
-  font-weight: bold;
-  font-size: 1.5rem;
+  text-decoration: none;
   transition: transform 0.3s ease;
 }
 
@@ -36,10 +35,15 @@ header.scrolled {
   transform: scale(1.05);
 }
 
-.logo-icon {
-  margin-right: 0.5rem;
-  font-size: 1.8rem;
-  color: var(--tertiary-color);
+.logo-image {
+  width: 40px; /* Adjust this value based on your logo size */
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .main-nav {
@@ -203,6 +207,10 @@ header.scrolled {
   /* Ensure the logo is visible */
   .logo {
     z-index: 1001;
+  }
+
+  .logo-image {
+    width: 30px; /* Adjust for mobile */
   }
 }
 
