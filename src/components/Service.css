@@ -1,0 +1,32 @@
+.service {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.service h1 {
+  color: var(--light-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .service {
+    padding: 2rem 1rem;
+  }
+
+  .service h1 {
+    font-size: 2rem;
+  }
+
+  .service p {
+    font-size: 1rem;
+  }
+}

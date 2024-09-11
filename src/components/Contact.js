@@ -68,7 +68,7 @@ function Contact() {
 
           <div className="contact-info">
             <h2>Connect With Me</h2>
-            <p>Feel free to reach out through any of these channels:</p>
+            <p>You’re welcome to reach out through any of these channels:</p>
             <div className="social-links">
               <a href="https://linkedin.com/in/sharfi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
               <a href="https://twitter.com/sharfi__" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>

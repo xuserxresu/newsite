@@ -1,106 +1,359 @@
 .about {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem; /* Reduced padding for mobile */
+  padding: 4rem 2rem;
+  color: var(--text-color);
+}
+
+.about section {
+  margin-bottom: 4rem;
+}
+
+.about h1, .about h2 {
+  color: var(--light-color);
+  margin-bottom: 1rem;
+}
+
+.about h1 {
+  font-size: 3rem;
+}
+
+.about h2 {
+  font-size: 2rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.humor p {
+  font-style: italic;
+  color: var(--tertiary-color);
+}
+
+.skill-blobs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-blob {
+  background-color: rgba(173, 73, 225, 0.2);
+  color: var(--light-color);
+  padding: 1rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.skill-blob:hover {
+  transform: scale(1.05);
+  background-color: rgba(173, 73, 225, 0.4);
+}
+
+.fun-facts ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.fun-facts li {
+  background-color: rgba(46, 7, 63, 0.3);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.fun-facts li:hover {
+  transform: translateX(10px);
+  background-color: rgba(46, 7, 63, 0.5);
+}
+
+.timeline-section {
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.timeline-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  cursor: grab;
+}
+
+.timeline-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.timeline-container:active {
+  cursor: grabbing;
+}
+
+.timeline-item {
+  flex: 0 0 300px;
+  margin-right: 2rem;
+  scroll-snap-align: start;
+}
+
+.timeline-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+}
+
+.timeline-icon i {
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+
+.timeline-content {
+  background-color: rgba(46, 7, 63, 0.3);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: var(--tertiary-color);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about h1 {
+    font-size: 2.5rem;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .skill-blobs {
+    justify-content: flex-start;
+  }
+
+  .timeline-container {
+    padding: 1rem 0;
+    padding-bottom: 1rem;
+  }
+
+  .timeline-item {
+    flex: 0 0 250px;
+  }
+}
+
+.achievements {
+  margin-bottom: 4rem;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.achievement-card {
+  background-color: rgba(46, 7, 63, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.achievement-card.expanded {
+  height: auto;
+  background-color: rgba(46, 7, 63, 0.5);
+}
+
+.achievement-icon {
+  font-size: 3rem;
+  color: var(--tertiary-color);
+  margin-bottom: 1rem;
+}
+
+.achievement-card h3 {
+  color: var(--light-color);
+  margin-bottom: 1rem;
+}
+
+.achievement-description {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.achievement-card.expanded .achievement-description {
+  opacity: 1;
+  max-height: 1000px;
+  margin-top: 1rem;
+}
+
+.intro-and-humor {
+  background-color: rgba(46, 7, 63, 0.3);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-and-humor h1 {
+  color: var(--light-color);
+  margin-bottom: 1rem;
+}
+
+.intro-and-humor h2 {
+  color: var(--tertiary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro-and-humor p {
+  margin-bottom: 1rem;
+}
+
+.companies-worked-with {
+  margin-bottom: 4rem;
+}
+
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.company-blob {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  transition: all 0.3s ease;
+}
+
+.blob-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--company-color);
+  opacity: 0.7;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: blobAnimation var(--animation-duration) ease-in-out infinite;
+  animation-delay: var(--animation-delay);
+}
+
+.company-name {
+  position: relative;
+  z-index: 1;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@keyframes blobAnimation {
+  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+}
+
+.company-blob:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .company-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+
+  .company-blob {
+    width: 100px;
+    height: 100px;
+  }
+
+  .company-name {
+    font-size: 0.8rem;
+  }
+}
+
+.tech-stack {
+  margin-bottom: 4rem;
+}
+
+.tech-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tech-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-}
-
-.about-card {
-  background-color: rgba(46, 7, 63, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 2rem 1.5rem; /* Reduced padding for mobile */
-  border-radius: 15px; /* Slightly reduced border-radius */
-  border: 1px solid rgba(173, 73, 225, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  width: 100%;
-  max-width: 800px;
-}
-
-.hero {
   text-align: center;
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  transition: all 0.3s ease;
 }
 
-.hero h1 {
-  color: var(--light-color);
-  font-size: 2.5rem; /* Reduced font size for mobile */
-  margin-bottom: 0.25rem; /* Reduced from 0.5rem */
+.tech-icon img {
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
 }
 
-.tagline {
-  color: var(--tertiary-color);
-  font-size: 1.1rem; /* Slightly reduced font size */
-  margin-bottom: 1rem; /* Added to create space between tagline and content */
+.tech-icon:hover img {
+  transform: scale(1.1);
 }
 
-.intro, .mission, .certifications {
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
-}
-
-.intro p, .mission p {
+.tech-name {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
   color: var(--text-color);
-  margin-bottom: 1rem;
-  font-size: 1rem; /* Reduced font size */
-  line-height: 1.5;
 }
 
-h2 {
-  color: var(--light-color);
-  font-size: 1.8rem; /* Reduced font size */
-  margin-bottom: 1rem;
-}
-
-.certifications li {
-  margin-bottom: 0.8rem;
-  font-size: 1rem; /* Reduced font size */
-}
-
-.call-to-action {
-  text-align: center;
-  margin-top: 2rem; /* Reduced margin */
-}
-
-.call-to-action h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem; /* Reduced font size */
-}
-
-.call-to-action p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem; /* Reduced font size */
-}
-
-.cta-button {
-  padding: 0.8rem 2rem; /* Reduced padding */
-  font-size: 1.1rem; /* Reduced font size */
-}
-
-@media (min-width: 768px) {
-  .about {
-    padding: 4rem 2rem;
+@media (max-width: 768px) {
+  .tech-icons {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
   }
 
-  .about-card {
-    padding: 3rem;
+  .tech-icon img {
+    width: 40px;
+    height: 40px;
   }
 
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .intro p, .mission p {
-    font-size: 1.1rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  .call-to-action h2 {
-    font-size: 2.5rem;
+  .tech-name {
+    font-size: 0.7rem;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
@@ -39,10 +40,42 @@ function Home() {
   }, [text, isDeleting, loopNum, typingSpeed, phrases]);
 
   const services = [
-    { icon: 'fas fa-cloud', name: 'Cloud Solutions', description: 'Optimize your business with cutting-edge cloud technologies.' },
-    { icon: 'fas fa-shield-alt', name: 'Cybersecurity', description: 'Protect your digital assets with robust security measures.' },
-    { icon: 'fas fa-robot', name: 'AI Integration', description: 'Leverage the power of AI to drive innovation and efficiency.' },
-    { icon: 'fas fa-cogs', name: 'IT Consulting', description: 'Expert advice to align your IT strategy with business goals.' }
+    {
+      id: 'microsoft365',
+      icon: 'fas fa-cloud',
+      title: 'Microsoft 365 Solutions',
+      description: 'Maximize your organization\'s use of cloud-based tools with comprehensive Microsoft 365 solutions.'
+    },
+    {
+      id: 'cybersecurity',
+      icon: 'fas fa-shield-alt',
+      title: 'Cybersecurity',
+      description: 'Protect your business with advanced cybersecurity solutions and ongoing threat monitoring.'
+    },
+    {
+      id: 'infrastructure',
+      icon: 'fas fa-network-wired',
+      title: 'IT Infrastructure Management',
+      description: 'Design and manage robust, scalable IT infrastructures tailored to your business needs.'
+    },
+    {
+      id: 'erp',
+      icon: 'fas fa-cogs',
+      title: 'Odoo ERP Implementation',
+      description: 'Streamline your business processes with customized Odoo ERP solutions.'
+    },
+    {
+      id: 'ai-content',
+      icon: 'fas fa-brain',
+      title: 'AI Writing & Image Generation',
+      description: 'Leverage AI technology for high-quality, customized content creation.'
+    },
+    {
+      id: 'hosting',
+      icon: 'fas fa-server',
+      title: 'Hosting & Domain Services',
+      description: 'Ensure your online presence with secure and reliable hosting solutions.'
+    }
   ];
 
   return (
@@ -69,18 +102,20 @@ function Home() {
         </div>
       </section>
 
-      <section className="services">
-        <h2 className="section-title fade-in-up">What I Do</h2>
-        <div className="service-grid">
-          {services.map((service, index) => (
-            <div key={index} className="service-card fade-in-up">
-              <div className="service-icon-wrapper">
-                <i className={`${service.icon} service-icon`}></i>
+      <section className="services fade-in">
+        <div className="services-card">
+          <h2><i className="fas fa-cogs"></i> What I Do</h2>
+          <p className="tagline">Comprehensive IT solutions for your business needs</p>
+          
+          <div className="service-list">
+            {services.map((service) => (
+              <div key={service.id} className="service-item">
+                <i className={service.icon}></i>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
               </div>
-              <h3>{service.name}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -104,13 +139,11 @@ function Home() {
               <p>With years of hands-on experience, I bring industry insights and expertise to every project, delivering solutions you can count on.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="cta">
-        <div className="container">
-          <h2 className="fade-in-up">Ready to Transform Your IT Infrastructure?</h2>
-          <p className="fade-in-up">Let's discuss how we can elevate your business with our IT solutions.</p>
+          <div className="call-to-action">
+            <h2>Ready to elevate your IT infrastructure?</h2>
+            <p>Let's chat about how I can help your business thrive.</p>
+            <Link to="/contact" className="cta-button">Get in Touch</Link>
+          </div>
         </div>
       </section>
     </div>
