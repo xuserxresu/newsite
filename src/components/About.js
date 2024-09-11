@@ -4,10 +4,11 @@ import './About.css';
 function About() {
   const timelineRef = useRef(null);
   const [expandedCard, setExpandedCard] = useState(null);
-  const [activeCompany, setActiveCompany] = useState(null);
 
   useEffect(() => {
     const timeline = timelineRef.current;
+    if (!timeline) return;
+
     let isScrolling = false;
     let startX;
     let scrollLeft;
@@ -40,10 +41,12 @@ function About() {
     timeline.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      timeline.removeEventListener('mousedown', handleMouseDown);
-      timeline.removeEventListener('mouseleave', handleMouseLeave);
-      timeline.removeEventListener('mouseup', handleMouseUp);
-      timeline.removeEventListener('mousemove', handleMouseMove);
+      if (timeline) {
+        timeline.removeEventListener('mousedown', handleMouseDown);
+        timeline.removeEventListener('mouseleave', handleMouseLeave);
+        timeline.removeEventListener('mouseup', handleMouseUp);
+        timeline.removeEventListener('mousemove', handleMouseMove);
+      }
     };
   }, []);
 
@@ -146,6 +149,10 @@ function About() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="timeline-scroll-hint">
+          <span>Scroll</span>
+          <i className="fas fa-arrow-right"></i>
         </div>
       </section>
 

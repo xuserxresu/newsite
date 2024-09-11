@@ -7,17 +7,25 @@ function Contact() {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send data to a server)
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    // Here you would typically send the form data to your backend
+    // For now, we'll just simulate a submission
+    setTimeout(() => {
+      setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
+      setFormData({ name: '', email: '', message: '' });
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   return (
@@ -63,12 +71,16 @@ function Contact() {
                 placeholder="How can I help you?"
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
           </form>
+
+          {submitMessage && <p className="submit-message">{submitMessage}</p>}
 
           <div className="contact-info">
             <h2>Connect With Me</h2>
-            <p>You’re welcome to reach out through any of these channels:</p>
+            <p>You're welcome to reach out through any of these channels:</p>
             <div className="social-links">
               <a href="https://linkedin.com/in/sharfi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
               <a href="https://twitter.com/sharfi__" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>

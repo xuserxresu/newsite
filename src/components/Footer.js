@@ -16,12 +16,14 @@ function Footer() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/services">Services I Provide</Link></li>
             <li><Link to="/about">About</Link></li>
+            <li><Link to="/blog">Bytes & Thoughts</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>Connect</h3>
           <div className="social-icons">
+            <a href="mailto:sharfiahmed@gmail.com"><i className="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/sharfi" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
             <a href="https://twitter.com/sharfi__" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
             <a href="https://github.com/xuserxresu" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
@@ -29,7 +31,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 IT Solutions Architect. All rights reserved.</p>
+        <p>&copy; 2024 Ahmed Sharfi. All rights reserved.</p>
       </div>
     </footer>
   );

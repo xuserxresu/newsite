@@ -1,0 +1,211 @@
+.bytes-and-thoughts {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.bytes-and-thoughts h1 {
+  color: var(--light-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.intro {
+  color: var(--tertiary-color);
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.blog-post {
+  background-color: rgba(46, 7, 63, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-content {
+  flex-grow: 1;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--tertiary-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-excerpt {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem; /* Increase bottom margin to make space for the button */
+}
+
+.tag {
+  background-color: rgba(173, 73, 225, 0.2);
+  color: var(--light-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.read-more {
+  position: relative; /* Change from absolute to relative positioning */
+  align-self: flex-end; /* Align to the right */
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem; /* Add top margin */
+}
+
+.read-more span {
+  margin-right: 0.5rem;
+}
+
+.read-more::after {
+  content: '→';
+  font-size: 1.2em;
+}
+
+.read-more:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .bytes-and-thoughts {
+    padding: 2rem 1rem;
+  }
+
+  .bytes-and-thoughts h1 {
+    font-size: 2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .blog-post h2 {
+    font-size: 1.5rem;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .read-more {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem; /* Reduce top margin on mobile */
+  }
+
+  .read-more span {
+    margin-right: 0.3rem;
+  }
+}
+
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.article-content {
+  background: rgba(46, 7, 63, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.article-content h1 {
+  color: var(--light-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.article-meta {
+  color: var(--tertiary-color);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.article-body {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.article-body h2 {
+  color: var(--light-color);
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article-body ul {
+  text-align: left;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article-body p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .article-container {
+    padding: 2rem 1rem;
+  }
+
+  .article-content {
+    padding: 2rem;
+  }
+
+  .article-content h1 {
+    font-size: 2rem;
+  }
+
+  .article-body {
+    font-size: 1rem;
+  }
+
+  .article-body h2 {
+    font-size: 1.5rem;
+  }
+}

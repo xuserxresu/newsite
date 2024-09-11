@@ -82,12 +82,37 @@
 .social-icons a {
   color: var(--light-color);
   font-size: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(173, 73, 225, 0.2);
+  text-decoration: none;
 }
 
 .social-icons a:hover {
-  color: var(--tertiary-color);
+  background-color: transparent;
   transform: translateY(-3px);
+}
+
+/* Specific hover colors for each social icon */
+.social-icons a[href*="linkedin"]:hover {
+  color: #0077B5; /* LinkedIn blue */
+}
+
+.social-icons a[href*="twitter"]:hover {
+  color: #1DA1F2; /* Twitter blue */
+}
+
+.social-icons a[href*="github"]:hover {
+  color: #6e5494; /* GitHub purple */
+}
+
+.social-icons a[href^="mailto:"]:hover {
+  color: #D44638; /* Gmail red color */
 }
 
 .footer-bottom {

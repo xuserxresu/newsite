@@ -80,81 +80,79 @@
 .timeline-container {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  padding: 1.5rem 0.5rem 2rem; /* Added top and side padding */
+  scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer and Edge */
-  cursor: grab;
 }
 
 .timeline-container::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
 }
 
-.timeline-container:active {
-  cursor: grabbing;
+.timeline-item {
+  flex: 0 0 250px; /* Decreased from 300px */
+  margin-right: 1.5rem; /* Decreased from 2rem */
+  background-color: rgba(46, 7, 63, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px; /* Slightly decreased from 15px */
+  padding: 1.25rem; /* Decreased from 1.5rem */
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.timeline-item {
-  flex: 0 0 300px;
-  margin-right: 2rem;
-  scroll-snap-align: start;
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: var(--secondary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 1rem;
-}
-
-.timeline-icon i {
-  font-size: 1.5rem;
-  color: var(--light-color);
-}
-
-.timeline-content {
-  background-color: rgba(46, 7, 63, 0.3);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1.8rem; /* Decreased from 2rem */
+  color: var(--tertiary-color);
+  margin-bottom: 0.75rem; /* Decreased from 1rem */
 }
 
 .timeline-content h3 {
-  font-size: 1.2rem;
   color: var(--tertiary-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem; /* Decreased from 0.5rem */
+  font-size: 1.1rem; /* Decreased from 1.2rem */
 }
 
-@media (max-width: 768px) {
-  .about {
-    padding: 2rem 1rem;
-  }
+.timeline-content p {
+  color: var(--text-color);
+  font-size: 0.85rem; /* Decreased from 0.9rem */
+  line-height: 1.3;
+}
 
-  .about h1 {
-    font-size: 2.5rem;
-  }
+.timeline-scroll-hint {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--tertiary-color);
+  font-size: 0.9rem; /* Decreased from 1rem */
+  animation: fadeInOut 2s ease-in-out infinite;
+}
 
-  .about h2 {
-    font-size: 1.8rem;
-  }
+.timeline-scroll-hint span {
+  margin-right: 0.4rem; /* Decreased from 0.5rem */
+}
 
-  .skill-blobs {
-    justify-content: flex-start;
-  }
+.timeline-scroll-hint i {
+  font-size: 1.1rem; /* Decreased from 1.2rem */
+}
 
-  .timeline-container {
-    padding: 1rem 0;
-    padding-bottom: 1rem;
-  }
-
-  .timeline-item {
-    flex: 0 0 250px;
-  }
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
 .achievements {
