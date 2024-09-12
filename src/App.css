@@ -74,3 +74,8 @@ body {
 main {
   padding-top: 80px; /* Adjust this value based on your header height */
 }
+
+.App {
+  max-width: 100%;
+  overflow-x: hidden;
+}

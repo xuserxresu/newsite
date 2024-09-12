@@ -1,9 +1,9 @@
 import React from 'react';
-import './BytesAndThoughts.css';
+import './BlogPost.css';
 
 function CloudComputingArticle() {
   return (
-    <div className="article-container">
+    <div className="blog-post">
       <div className="article-content">
         <h1>The Future of Cloud Computing: Trends to Watch</h1>
         <p className="article-meta">May 15, 2024 | by Ahmed Sharfi</p>

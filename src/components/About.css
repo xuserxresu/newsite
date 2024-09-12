@@ -1,8 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 .about {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  color: var(--text-color);
+  max-width: 100%;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
 }
 
 .about section {
@@ -84,6 +87,7 @@
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer and Edge */
+  -webkit-overflow-scrolling: touch;
 }
 
 .timeline-container::-webkit-scrollbar {
@@ -290,18 +294,50 @@
 }
 
 @media (max-width: 768px) {
+  .about h1 {
+    font-size: 2.5rem;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .skill-blobs {
+    justify-content: flex-start;
+  }
+
+  .skill-blob {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .timeline-item {
+    flex: 0 0 200px;
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-card {
+    height: auto;
+  }
+
   .company-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   }
 
   .company-blob {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
-  .company-name {
-    font-size: 0.8rem;
+  .tech-icons {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   }
 }
 

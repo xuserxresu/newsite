@@ -150,7 +150,7 @@ function About() {
       color: 'rgba(173, 73, 225, 0.7)', 
       animationDuration: '9s', 
       animationDelay: '3s',
-      link: 'https://www.aps-sd.com/'
+      link: 'http://www.aps-sdn.com/'
     },
     { 
       name: 'FaceOne', 

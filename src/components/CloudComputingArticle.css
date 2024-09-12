@@ -1,0 +1,26 @@
+.cloud-computing-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.cloud-computing-article h1,
+.cloud-computing-article h2,
+.cloud-computing-article h3,
+.cloud-computing-article p,
+.cloud-computing-article ul,
+.cloud-computing-article ol {
+  text-align: left;
+}
+
+.cloud-computing-article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+}
+
+.cloud-computing-article * {
+  text-align: left !important;
+}
