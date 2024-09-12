@@ -339,6 +339,21 @@
   .tech-icons {
     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   }
+
+  .tech-icon {
+    /* Remove any color changes for mobile if they exist */
+  }
+
+  .tech-icon i {
+    /* Ensure the icon color remains the same on mobile */
+    color: inherit;
+  }
+
+  .themed-logo {
+    /* Ensure the company logos use the same filter on mobile */
+    filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(215deg);
+    opacity: 0.8;
+  }
 }
 
 .tech-stack {

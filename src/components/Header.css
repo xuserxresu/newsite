@@ -225,6 +225,11 @@ header.scrolled {
   .logo-image {
     width: 40px; /* Adjust for mobile */
   }
+
+  .main-nav a, .main-nav i {
+    /* Ensure the color remains consistent on mobile */
+    color: var(--light-color);
+  }
 }
 
 .scrolled {

@@ -137,4 +137,8 @@
   .social-icons {
     justify-content: center;
   }
+
+  .social-icons a, .social-icons i {
+    color: var(--light-color);
+  }
 }

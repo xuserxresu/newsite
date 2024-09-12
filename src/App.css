@@ -79,3 +79,15 @@ main {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* Add or update these styles */
+.fab, .fas {
+  color: var(--tertiary-color);
+}
+
+@media (max-width: 768px) {
+  .fab, .fas {
+    /* Ensure the color remains the same on mobile */
+    color: var(--tertiary-color);
+  }
+}
