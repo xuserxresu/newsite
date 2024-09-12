@@ -351,7 +351,7 @@
 
   .themed-logo {
     /* Ensure the company logos use the same filter on mobile */
-    filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(215deg);
+    filter: brightness(0) invert(0.8);
     opacity: 0.8;
   }
 }
@@ -416,7 +416,8 @@
 }
 
 .themed-logo {
-  filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(215deg);
+  /* Change this filter to make the logos grey */
+  filter: brightness(0) invert(0.8);
   opacity: 0.8;
 }
 
