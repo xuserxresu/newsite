@@ -4,8 +4,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import ServicesIProvide from './components/ServicesIProvide';
-import About from './components/About';
+import Solutions from './components/Solutions'; // Add this import
+import About from './components/About'; // Change this line back to About
 import Contact from './components/Contact';
 import BytesAndThoughts from './components/BytesAndThoughts';
 import CybersecurityArticle from './components/CybersecurityArticle';
@@ -48,8 +48,8 @@ function AppRoutes() {
       <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<ServicesIProvide />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/solutions" element={<Solutions />} /> {/* Update this line */}
+          <Route path="/about" element={<About />} /> {/* Change this line back to About */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<BytesAndThoughts />} />
           <Route path="/blog/cybersecurity-best-practices" element={<CybersecurityArticle />} />

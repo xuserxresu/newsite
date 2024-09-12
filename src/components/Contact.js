@@ -32,7 +32,7 @@ function Contact() {
     <div className="contact fade-in">
       <div className="contact-card">
         <h1><i className="fas fa-envelope"></i> Get in Touch</h1>
-        <p className="tagline">Let's discuss how I can help your business thrive</p>
+        <p className="tagline">Say Hi & Let's Grab a Coffee</p>
 
         <div className="contact-content">
           <form className="contact-form" onSubmit={handleSubmit}>

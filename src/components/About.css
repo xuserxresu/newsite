@@ -355,3 +355,26 @@
     font-size: 0.7rem;
   }
 }
+
+.company-logo {
+  position: relative;
+  z-index: 1;
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.themed-logo {
+  filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(215deg);
+  opacity: 0.8;
+}
+
+.company-link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
+}
+
+.company-blob {
+  cursor: pointer;
+}

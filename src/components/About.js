@@ -35,10 +35,31 @@ function About() {
       timeline.scrollLeft = scrollLeft - walk;
     };
 
+    const handleTouchStart = (e) => {
+      isScrolling = true;
+      startX = e.touches[0].pageX - timeline.offsetLeft;
+      scrollLeft = timeline.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isScrolling) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - timeline.offsetLeft;
+      const walk = (x - startX) * 2;
+      timeline.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleTouchEnd = () => {
+      isScrolling = false;
+    };
+
     timeline.addEventListener('mousedown', handleMouseDown);
     timeline.addEventListener('mouseleave', handleMouseLeave);
     timeline.addEventListener('mouseup', handleMouseUp);
     timeline.addEventListener('mousemove', handleMouseMove);
+    timeline.addEventListener('touchstart', handleTouchStart);
+    timeline.addEventListener('touchmove', handleTouchMove);
+    timeline.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       if (timeline) {
@@ -46,6 +67,9 @@ function About() {
         timeline.removeEventListener('mouseleave', handleMouseLeave);
         timeline.removeEventListener('mouseup', handleMouseUp);
         timeline.removeEventListener('mousemove', handleMouseMove);
+        timeline.removeEventListener('touchstart', handleTouchStart);
+        timeline.removeEventListener('touchmove', handleTouchMove);
+        timeline.removeEventListener('touchend', handleTouchEnd);
       }
     };
   }, []);
@@ -96,12 +120,46 @@ function About() {
   ];
 
   const companies = [
-    { name: 'Company A', color: 'rgba(173, 73, 225, 0.7)', animationDuration: '8s', animationDelay: '0s' },
-    { name: 'Company B', color: 'rgba(122, 28, 172, 0.7)', animationDuration: '10s', animationDelay: '1s' },
-    { name: 'Company C', color: 'rgba(46, 7, 63, 0.7)', animationDuration: '12s', animationDelay: '2s' },
-    { name: 'Company D', color: 'rgba(173, 73, 225, 0.7)', animationDuration: '9s', animationDelay: '3s' },
-    { name: 'Company E', color: 'rgba(122, 28, 172, 0.7)', animationDuration: '11s', animationDelay: '4s' },
-    { name: 'Company F', color: 'rgba(46, 7, 63, 0.7)', animationDuration: '13s', animationDelay: '5s' },
+    { 
+      name: 'Dal Group', 
+      logo: 'https://www.dropbox.com/scl/fi/wmticsfcjoizay2apv3gf/Dal-Group.png?rlkey=4eiil3k5re110n585itv4pd6x&st=uihx495l&raw=1', 
+      color: 'rgba(173, 73, 225, 0.7)', 
+      animationDuration: '8s', 
+      animationDelay: '0s',
+      link: 'https://www.dalgroup.com/'
+    },
+    { 
+      name: 'E2E', 
+      logo: 'https://www.dropbox.com/scl/fi/f4zjnc6dunolpcs8w65bm/e2e.png?rlkey=mixv3gu70qs6r3cbcut9kn0da&st=dgvsve34&raw=1', 
+      color: 'rgba(46, 7, 63, 0.7)', 
+      animationDuration: '12s', 
+      animationDelay: '2s',
+      link: 'http://www.e2egroups.com'
+    },
+    { 
+      name: 'Mahgoub Sons Group', 
+      logo: 'https://www.dropbox.com/scl/fi/u5xrqrzfp3717r4xdq93p/mahgoub-sons-group-squarelogo-1661248233691.png?rlkey=aoom7wu4oha84998503a0sbd7&st=bo4pbb1t&raw=1', 
+      color: 'rgba(122, 28, 172, 0.7)', 
+      animationDuration: '10s', 
+      animationDelay: '1s',
+      link: 'https://mahgoubsons.com/'
+    },
+    { 
+      name: 'Advanced Power Systems', 
+      logo: 'https://www.dropbox.com/scl/fi/ors1vq8ug8faiiccgh8az/advanced_power_systems_co_aps_jcb_logo.png?rlkey=jpgb7a2l2oeefkejnfcmkk4as&st=oxyvrc0l&raw=1', 
+      color: 'rgba(173, 73, 225, 0.7)', 
+      animationDuration: '9s', 
+      animationDelay: '3s',
+      link: 'https://www.aps-sd.com/'
+    },
+    { 
+      name: 'FaceOne', 
+      logo: 'https://www.dropbox.com/scl/fi/h553xhzdrjy0bbagt7yin/faceone_logo.webp?rlkey=428i7zws62df6utwh3ybr8pgu&st=j3i4uvuh&raw=1', 
+      color: 'rgba(122, 28, 172, 0.7)', 
+      animationDuration: '11s', 
+      animationDelay: '4s',
+      link: 'https://www.faceonegroup.com/'
+    },
   ];
 
   const techStack = [
@@ -196,18 +254,25 @@ function About() {
         <h2>Companies I've Worked With</h2>
         <div className="company-grid">
           {companies.map((company, index) => (
-            <div 
-              key={index} 
-              className="company-blob"
-              style={{
-                '--company-color': company.color,
-                '--animation-duration': company.animationDuration,
-                '--animation-delay': company.animationDelay
-              }}
+            <a 
+              key={index}
+              href={company.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="company-link"
             >
-              <div className="blob-animation"></div>
-              <span className="company-name">{company.name}</span>
-            </div>
+              <div 
+                className="company-blob"
+                style={{
+                  '--company-color': company.color,
+                  '--animation-duration': company.animationDuration,
+                  '--animation-delay': company.animationDelay
+                }}
+              >
+                <div className="blob-animation"></div>
+                <img src={company.logo} alt={company.name} className="company-logo themed-logo" />
+              </div>
+            </a>
           ))}
         </div>
       </section>

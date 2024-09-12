@@ -143,6 +143,19 @@ header.scrolled {
 }
 
 @media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .main-nav li {
+    margin: 10px 0;
+  }
+
   .main-nav {
     position: fixed;
     top: 0;
@@ -210,7 +223,7 @@ header.scrolled {
   }
 
   .logo-image {
-    width: 30px; /* Adjust for mobile */
+    width: 40px; /* Adjust for mobile */
   }
 }
 

@@ -154,7 +154,7 @@
   color: var(--light-color);
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .article-meta {

@@ -34,14 +34,14 @@ function Header() {
     <header className={`${menuOpen ? 'menu-open' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <Link to="/" className="logo" onClick={closeMenu}>
-          <img src="/images/sharfi_grey.png" alt="Ahmed Sharfi Logo" className="logo-image" />
+          <img src="https://www.dropbox.com/scl/fi/d2ay7yswfwhirur2mmptu/sharfi_grey.png?rlkey=oqnbxv7u6q3lmom45q7wjng3s&st=wepnc3gs&raw=1" alt="Ahmed Sharfi Logo" className="logo-image" />
           <span className="logo-text">Ahmed Sharfi</span>
         </Link>
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
-            <li><NavLink to="/services" onClick={closeMenu}>Services I Provide</NavLink></li>
-            <li><NavLink to="/about" onClick={closeMenu}>About</NavLink></li>
+            <li><NavLink to="/solutions" onClick={closeMenu}>Solutions Tailored for You</NavLink></li>
+            <li><NavLink to="/about" onClick={closeMenu}>Get To Know Me</NavLink></li> {/* Changed this line */}
             <li><NavLink to="/blog" onClick={closeMenu}>Bytes & Thoughts</NavLink></li>
             <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
           </ul>
