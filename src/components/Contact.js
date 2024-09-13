@@ -24,19 +24,30 @@ function Contact() {
     const formDataEncoded = new URLSearchParams(formData).toString();
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzKLL6KUIpdd-HiQh9QRv7SkJIJokLwlB604a9R6Gy-8EWkiB_sCmNyesIw2yjJ0U5fzA/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwxjyZQcJCU1U4r945RaQKOqaTD8H9c6djFC494_wZlnlvrn1--kJQgXLyDfLknzNa0GQ/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: formDataEncoded,
+        body: JSON.stringify(formData),
       });
-    // For now, we'll just simulate a submission
-    setTimeout(() => {
-      setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+
+      console.log('Response status:', response.status);
+      const responseText = await response.text();
+      console.log('Response text:', responseText);
+
+      if (response.ok) {
+        setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitMessage(`Oops! Something went wrong. Server responded with status ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitMessage(`Oops! Something went wrong. Error: ${error.message}`);
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
