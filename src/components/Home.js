@@ -94,8 +94,10 @@ function Home() {
             </div>
             <div className="terminal-window">
               <p className="terminal-text">
-                $ IT Solutions: <span className="typing">{text}</span>
-                <span className="cursor">|</span>
+                $ IT Solutions: <span className="typing-container">
+                  <span className="typing">{text}</span>
+                  <span className="cursor"></span>
+                </span>
               </p>
             </div>
           </div>

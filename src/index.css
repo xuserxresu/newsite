@@ -9,3 +9,49 @@
   --success-color: #27c93f;
   --warning-color: #ffbd2e;
 }
+
+/* Footer social icon styles */
+.footer .social-icons a {
+    color: var(--text-color); /* Default color */
+    transition: color 0.3s ease;
+}
+
+/* Brand colors on hover */
+.footer .social-icons a:hover .fa-envelope {
+    color: #D44638; /* Gmail red */
+}
+
+.footer .social-icons a:hover .fa-linkedin {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+.footer .social-icons a:hover .fa-twitter {
+    color: #1da1f2; /* Twitter blue */
+}
+
+.footer .social-icons a:hover .fa-github {
+    color: #333; /* GitHub dark gray */
+}
+
+/* Contact social icon styles */
+.contact .social-icons a {
+    color: var(--text-color); /* Default color */
+    transition: color 0.3s ease;
+}
+
+/* Brand colors on hover for Contact page */
+.contact .social-icons a:hover .fa-envelope {
+    color: #D44638; /* Gmail red */
+}
+
+.contact .social-icons a:hover .fa-linkedin {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+.contact .social-icons a:hover .fa-twitter {
+    color: #1da1f2; /* Twitter blue */
+}
+
+.contact .social-icons a:hover .fa-github {
+    color: #333; /* GitHub dark gray */
+}
