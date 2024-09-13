@@ -24,7 +24,7 @@ function Contact() {
     const formDataEncoded = new URLSearchParams(formData).toString();
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxWRl19O9jVIU4lJ3Sfs2PiZISCJxutz8LLx0JOw_pMQLAYzLyf0ZGR8b6vJkJStbFLLg/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzKLL6KUIpdd-HiQh9QRv7SkJIJokLwlB604a9R6Gy-8EWkiB_sCmNyesIw2yjJ0U5fzA/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
