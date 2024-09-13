@@ -20,12 +20,15 @@ function Contact() {
     setSubmitMessage('');
 
     // Here you would typically send the form data to your backend
+    const formDataForSheet = new FormData();
+    formDataForSheet.append('name', formData.name);
+    formDataForSheet.append('email', formData.email);
+    formDataForSheet.append('message', formData.message);
+
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycby6w6bQF9EUFVxfVjCM83sakn4qRNKBPlWIVUNFWuDWCmvBjm5JhmNkyQhVErd_Xu3S5w/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxWRl19O9jVIU4lJ3Sfs2PiZISCJxutz8LLx0JOw_pMQLAYzLyf0ZGR8b6vJkJStbFLLg/exec', {
         method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json'
+        body: formDataForSheet,
         }
       });
     // For now, we'll just simulate a submission
