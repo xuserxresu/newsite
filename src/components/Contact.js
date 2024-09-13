@@ -20,6 +20,14 @@ function Contact() {
     setSubmitMessage('');
 
     // Here you would typically send the form data to your backend
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycby6w6bQF9EUFVxfVjCM83sakn4qRNKBPlWIVUNFWuDWCmvBjm5JhmNkyQhVErd_Xu3S5w/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
     // For now, we'll just simulate a submission
     setTimeout(() => {
       setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
