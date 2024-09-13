@@ -20,16 +20,16 @@ function Contact() {
     setSubmitMessage('');
 
     // Here you would typically send the form data to your backend
-    const formDataForSheet = new FormData();
-    formDataForSheet.append('name', formData.name);
-    formDataForSheet.append('email', formData.email);
-    formDataForSheet.append('message', formData.message);
+     // Create URL-encoded form data
+    const formDataEncoded = new URLSearchParams(formData).toString();
 
     try {
       const response = await fetch('https://script.google.com/macros/s/AKfycbxWRl19O9jVIU4lJ3Sfs2PiZISCJxutz8LLx0JOw_pMQLAYzLyf0ZGR8b6vJkJStbFLLg/exec', {
         method: 'POST',
-        body: formDataForSheet,
-        }
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formDataEncoded,
       });
     // For now, we'll just simulate a submission
     setTimeout(() => {
