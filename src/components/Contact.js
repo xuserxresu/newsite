@@ -20,36 +20,25 @@ function Contact() {
     setSubmitMessage('');
 
     // Here you would typically send the form data to your backend
-     // Create URL-encoded form data
-    const formDataEncoded = new URLSearchParams(formData).toString();
-
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwxjyZQcJCU1U4r945RaQKOqaTD8H9c6djFC494_wZlnlvrn1--kJQgXLyDfLknzNa0GQ/exec', {
+try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwF1MM5KcbcvE0JnwGPr3IVPmtYosysKQ9CQCPvv15SfQap4rVhWpgTijEq4vbu1H_VTg/exec', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataForSheet,
+        mode: 'no-cors' // This is important for cross-origin requests to Google Apps Script
       });
 
-      console.log('Response status:', response.status);
-      const responseText = await response.text();
-      console.log('Response text:', responseText);
-
-      if (response.ok) {
-        setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitMessage(`Oops! Something went wrong. Server responded with status ${response.status}`);
-      }
+      // Since we're using 'no-cors', we can't access the response details
+      // We'll assume it was successful if we get here without an error
+      setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Error:', error);
-      setSubmitMessage(`Oops! Something went wrong. Error: ${error.message}`);
+      setSubmitMessage(`Oops! Something went wrong. Please try again later.`);
     }
 
     setIsSubmitting(false);
   };
-
+    
   return (
     <div className="contact fade-in">
       <div className="contact-card">
