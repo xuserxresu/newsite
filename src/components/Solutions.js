@@ -9,55 +9,55 @@ function Solutions() {
       id: 'microsoft365',
       icon: 'fab fa-microsoft',
       title: 'Microsoft 365',
-      description: 'Transform your team\'s productivity with Microsoft 365. We\'ll set up and optimize your Microsoft 365 environment, making collaboration and communication seamless and efficient.'
+      description: 'Optimize your team’s productivity with a customized Microsoft 365 setup. Achieve seamless collaboration and efficient communication through a well-configured digital workspace. Designed for teams of all sizes, this solution simplifies workflows, enhances coordination, and boosts overall efficiency.'
     },
     {
       id: 'odoo',
       icon: 'fas fa-cogs',
       title: 'Odoo ERP Solutions',
-      description: 'Streamline your business operations with Odoo ERP. From implementation to customization, we tailor Odoo to fit your unique needs, helping you manage everything from inventory to customer relations effortlessly.'
+      description: 'Streamline business operations with a tailored Odoo ERP solution. From implementation to full customization, Odoo is adapted to your specific business needs, offering effortless management of inventory, sales, and customer relationships. This powerful system enhances operational efficiency, helping you stay organized and focused on growth.'
     },
     {
       id: 'hosting',
       icon: 'fas fa-server',
       title: 'Hosting & Domain Names',
-      description: 'Your online presence starts here. We offer reliable hosting and domain name management, ensuring your website runs smoothly and is easy for your customers to find.'
+      description: 'Build a strong online presence with reliable hosting and domain management. Ensure your website operates smoothly and is easily accessible to your audience, providing a seamless experience for both you and your customers. From domain registration to hosting, every aspect is managed to keep your website fast, secure, and visible.'
     },
     {
       id: 'vps',
       icon: 'fas fa-network-wired',
       title: 'VPS/VDS Expertise',
-      description: 'Need powerful, scalable server solutions? Our VPS and VDS services provide the flexibility and security you need, tailored to support your growing business with top-notch performance.'
+      description: 'Get powerful and scalable server solutions with customized VPS and VDS services. Offering flexibility, security, and top-tier performance, these services are designed to support your growing business needs, ensuring reliable and efficient operations.'
     },
     {
       id: 'server-management',
       icon: 'fas fa-tasks',
       title: 'Server Management',
-      description: 'Ensure your IT infrastructure runs smoothly with our comprehensive server management services. We handle everything from routine maintenance to complex troubleshooting.'
+      description: 'Ensure smooth and reliable performance for your IT infrastructure with expert server management services. From regular maintenance to solving complex issues, every aspect of your server\'s health is covered to maximize uptime, security, and efficiency. Get peace of mind knowing your business runs on a well-managed, optimized system designed to support your growth.'
     },
     {
       id: 'firewalls',
       icon: 'fas fa-shield-alt',
       title: 'Firewalls & Cybersecurity',
-      description: 'Protect your digital assets with robust firewall solutions and cybersecurity measures. We implement and manage firewalls to safeguard your network from potential threats.'
+      description: 'Safeguard your digital assets with advanced firewall solutions and top-tier cybersecurity practices. With expert implementation and management, firewalls protect your network from potential threats, ensuring your systems remain secure and resilient. By proactively monitoring and managing security measures, you can focus on business growth while staying protected from cyber risks.'
     },
     {
       id: 'kaspersky',
       icon: 'fas fa-lock',
       title: 'Kaspersky Solutions',
-      description: 'Benefit from top-tier antivirus and security solutions with Kaspersky. We\'ll help you integrate and manage Kaspersky products to keep your systems secure.'
+      description: 'Protect your systems with industry-leading antivirus and security solutions from Kaspersky. With seamless integration and expert management, Kaspersky products provide comprehensive protection to keep your network and devices secure. By implementing Kaspersky, your business will benefit from advanced threat detection and real-time protection, ensuring a safe digital environment.'
     },
     {
       id: 'ai-image',
       icon: 'fas fa-image',
       title: 'AI Image Generation',
-      description: 'Bring your ideas to life with AI-generated images. Whether for marketing or creative projects, we use cutting-edge AI technology to produce stunning visuals.'
+      description: 'Transform marketing and creative projects with AI-generated imagery. The latest AI technology creates stunning visuals that bring ideas to life. Elevate brands and projects with unique designs that capture attention and drive engagement. Discover the future of visual creativity today.'
     },
     {
       id: 'technical-writing',
       icon: 'fas fa-pen-fancy',
       title: 'Technical Writing',
-      description: 'Communicate complex technical information clearly and effectively. Our technical writing services ensure that your documentation is accurate, user-friendly, and professional.'
+      description: 'Simplify complex technical information with precision. Expert technical writing services guarantee that your documentation is not only accurate but also user-friendly and professional. Elevate your communication with clarity and impact.'
     }
   ];
 
