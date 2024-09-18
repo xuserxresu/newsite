@@ -13,8 +13,7 @@ function Home() {
     'Cybersecurity',
     'AI Integration',
     'IT Infrastructure',
-    'Data Analytics',
-    'DevOps',
+    'Hosting & Domain Services',  
   ];
 
   useEffect(() => {
@@ -42,7 +41,7 @@ function Home() {
   const services = [
     {
       id: 'microsoft365',
-      icon: 'fas fa-cloud',
+      icon: 'fab fa-microsoft',
       title: 'Microsoft 365 Solutions',
       description: 'Maximize your organization\'s use of cloud-based tools with comprehensive Microsoft 365 solutions.'
     },
@@ -72,7 +71,7 @@ function Home() {
     },
     {
       id: 'hosting',
-      icon: 'fas fa-server',
+      icon: 'fas fa-globe',
       title: 'Hosting & Domain Services',
       description: 'Ensure your online presence with secure and reliable hosting solutions.'
     }
@@ -136,7 +135,7 @@ function Home() {
               <p>Your data's safety is a top priority with state-of-the-art security measures.</p>
             </div>
             <div className="about-item fade-in-up">
-              <i className="fas fa-users"></i>
+              <i className="fas fa-user"></i>
               <h3>Your Tech-Savvy Problem Solver</h3>
               <p>With years of hands-on experience, I bring industry insights and expertise to every project, delivering solutions you can count on.</p>
             </div>

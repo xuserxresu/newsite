@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-section">
           <h3>Ahmed Sharfi</h3>
-          <p>Innovative IT Solutions for your business</p>
+          <p>Revolutionary IT Solutions for your business</p>
         </div>
         <div className="footer-section">
           <h3>Quick Links</h3>

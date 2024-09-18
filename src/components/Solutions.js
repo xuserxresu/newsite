@@ -19,13 +19,13 @@ function Solutions() {
     },
     {
       id: 'hosting',
-      icon: 'fas fa-server',
+      icon: 'fas fa-globe',
       title: 'Hosting & Domain Names',
       description: 'Build a strong online presence with reliable hosting and domain management. Ensure your website operates smoothly and is easily accessible to your audience, providing a seamless experience for both you and your customers. From domain registration to hosting, every aspect is managed to keep your website fast, secure, and visible.'
     },
     {
       id: 'vps',
-      icon: 'fas fa-network-wired',
+      icon: 'fas fa-cloud',
       title: 'VPS/VDS Expertise',
       description: 'Get powerful and scalable server solutions with customized VPS and VDS services. Offering flexibility, security, and top-tier performance, these services are designed to support your growing business needs, ensuring reliable and efficient operations.'
     },
@@ -58,6 +58,12 @@ function Solutions() {
       icon: 'fas fa-pen-fancy',
       title: 'Technical Writing',
       description: 'Simplify complex technical information with precision. Expert technical writing services guarantee that your documentation is not only accurate but also user-friendly and professional. Elevate your communication with clarity and impact.'
+    },
+    {
+      id: 'Qr-code',
+      icon: 'fa-solid fa-qrcode',
+      title: 'QR Code Generation',
+      description: 'Generate QR codes for your business needs. QR codes are a great way to share information and connect with customers. They can be used for a variety of purposes, such as marketing, customer engagement, and more.'
     }
   ];
 
