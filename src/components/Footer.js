@@ -17,7 +17,7 @@ function Footer() {
             <li><Link to="/solutions">Solutions Tailored For You</Link></li>
             <li><Link to="/about">Get To Know Me</Link></li>
             <li><Link to="/blog">Bytes & Thoughts</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/contact">Reach Out</Link></li>
           </ul>
         </div>
         <div className="footer-section">

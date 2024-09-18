@@ -82,8 +82,8 @@ function Home() {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
-          <h1 className="fade-in-up">Innovative IT Solutions</h1>
-          <p className="fade-in-up">Empowering businesses with cutting-edge technology</p>
+          <h1 className="fade-in-up">Revolutionary IT Solutions</h1>
+          <p className="fade-in-up">Transforming businesses with next-generation technology</p>
         </div>
         <div className="hero-image fade-in-up">
           <div className="terminal">

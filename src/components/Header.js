@@ -43,7 +43,7 @@ const Header = React.memo(function Header() {
             <li><NavLink to="/solutions" onClick={closeMenu}>Solutions Tailored for You</NavLink></li>
             <li><NavLink to="/about" onClick={closeMenu}>Get To Know Me</NavLink></li>
             <li><NavLink to="/blog" onClick={closeMenu}>Bytes & Thoughts</NavLink></li>
-            <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
+            <li><NavLink to="/contact" onClick={closeMenu}>Reach Out</NavLink></li>
           </ul>
         </nav>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">

@@ -180,7 +180,7 @@ function About() {
     <div className="about">
       <section className="intro-and-humor">
         <h2>Meet the Tech Wizard</h2>
-        <p>Hi, I'm Ahmed Sharfi, the IT guy who's saved more servers from disaster than Batman has saved Gotham. I specialize in turning tech problems into 'oh-that-was-easy' moments.</p>
+        <p>Hello, I’m Ahmed Sharfi, an IT Solutions Architect who simplifies complex technology challenges. My goal is to make your IT systems work seamlessly and efficiently, turning tricky tech problems into easy solutions.</p>
         <p>Growing up in Sudan, I always imagined how technology could transform lives, and now, I'm turning those dreams into reality.</p>
       </section>
 
