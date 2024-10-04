@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
 
 function Contact() {
@@ -9,6 +9,17 @@ function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState(null);
+  const [showTerminal, setShowTerminal] = useState(false);
+
+  useEffect(() => {
+    if (submitMessage) {
+      setShowTerminal(true);
+      const timer = setTimeout(() => {
+        setShowTerminal(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitMessage]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,7 +42,7 @@ function Contact() {
       if (response.ok) {
         setSubmitMessage({
           type: 'success',
-          text: 'Thank you for your message. We\'ll get back to you soon!'
+          text: 'Form submitted successfully!'
         });
         setFormData({ name: '', email: '', message: '' });
       } else {
@@ -51,27 +62,8 @@ function Contact() {
 
     setIsSubmitting(false);
 
-    // Here you would typically send the form data to your backend
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwF1MM5KcbcvE0JnwGPr3IVPmtYosysKQ9CQCPvv15SfQap4rVhWpgTijEq4vbu1H_VTg/exec', {
-        method: 'POST',
-        body: formDataForSheet,
-        mode: 'no-cors' // This is important for cross-origin requests to Google Apps Script
-      });
-
-      // Since we're using 'no-cors', we can't access the response details
-      // We'll assume it was successful if we get here without an error
-      setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('Error:', error);
-      setSubmitMessage(`Oops! Something went wrong. Please try again later.`);
-    }
-    setTimeout(() => {
-      setSubmitMessage(null);
-    }, 5000);
-
-    setIsSubmitting(false);
+    setSubmitMessage("Thank you for your message!");
+   // Reset form fields if desired
   };
     
   return (
@@ -125,7 +117,7 @@ function Contact() {
             </button>
           </form>
 
-          {submitMessage && (
+          {showTerminal && (
             <div className="terminal-overlay">
               <div className="terminal">
                 <div className="terminal-header">
@@ -136,6 +128,7 @@ function Contact() {
                 <div className="terminal-window">
                   <p className="terminal-text">
                     $ Form submission: <span className={`typing ${submitMessage.type}`}>{submitMessage.text}</span>
+                    <span className="message-end">Message sent successfully!</span>
                     <span className="cursor">|</span>
                   </p>
                 </div>
