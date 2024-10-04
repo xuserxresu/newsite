@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #1e1e1e;
+  --secondary-color: #323232;
+  --tertiary-color: #ad49e1;
+  --light-color: #ffffff;
+  --text-color: #e0e0e0;
+  --accent-color: #64dd17; /* This should be the green color you're using */
+  --error-color: #ff5f56;
+  --success-color: #27c93f;
+  --warning-color: #ffbd2e;
+}

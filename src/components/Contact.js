@@ -8,7 +8,7 @@ function Contact() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,23 +20,12 @@ function Contact() {
     setSubmitMessage('');
 
     // Here you would typically send the form data to your backend
-try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwF1MM5KcbcvE0JnwGPr3IVPmtYosysKQ9CQCPvv15SfQap4rVhWpgTijEq4vbu1H_VTg/exec', {
-        method: 'POST',
-        body: formDataForSheet,
-        mode: 'no-cors' // This is important for cross-origin requests to Google Apps Script
-      });
-
-      // Since we're using 'no-cors', we can't access the response details
-      // We'll assume it was successful if we get here without an error
+    // For now, we'll just simulate a submission
+    setTimeout(() => {
       setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('Error:', error);
-      setSubmitMessage(`Oops! Something went wrong. Please try again later.`);
-    }
-
-    setIsSubmitting(false);
+      setIsSubmitting(false);
+    }, 1000);
   };
     
   return (
@@ -57,6 +46,7 @@ try {
                 onChange={handleChange}
                 required
                 placeholder="Your Name"
+                aria-label="Your Name"
               />
             </div>
             <div className="form-group">
@@ -69,6 +59,7 @@ try {
                 onChange={handleChange}
                 required
                 placeholder="your.email@example.com"
+                aria-label="Your Email"
               />
             </div>
             <div className="form-group">
@@ -80,6 +71,7 @@ try {
                 onChange={handleChange}
                 required
                 placeholder="How can I help you?"
+                aria-label="Your Message"
               ></textarea>
             </div>
             <button type="submit" className="submit-btn" disabled={isSubmitting}>
@@ -87,7 +79,23 @@ try {
             </button>
           </form>
 
-          {submitMessage && <p className="submit-message">{submitMessage}</p>}
+          {submitMessage && (
+            <div className="terminal-overlay">
+              <div className="terminal">
+                <div className="terminal-header">
+                  <span className="terminal-button red"></span>
+                  <span className="terminal-button yellow"></span>
+                  <span className="terminal-button green"></span>
+                </div>
+                <div className="terminal-window">
+                  <p className="terminal-text">
+                    $ Form submission: <span className={`typing ${submitMessage.type}`}>{submitMessage.text}</span>
+                    <span className="cursor">|</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="contact-info">
             <h2>Connect With Me</h2>
