@@ -17,15 +17,61 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitMessage('');
+    setSubmitMessage(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/myzgajlb', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitMessage({
+          type: 'success',
+          text: 'Thank you for your message. We\'ll get back to you soon!'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const errorData = await response.json();
+        setSubmitMessage({
+          type: 'error',
+          text: errorData.error || 'Oops! Something went wrong. Please try again later.'
+        });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitMessage({
+        type: 'error',
+        text: 'Network error. Please check your connection and try again.'
+      });
+    }
+
+    setIsSubmitting(false);
 
     // Here you would typically send the form data to your backend
-    // For now, we'll just simulate a submission
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwF1MM5KcbcvE0JnwGPr3IVPmtYosysKQ9CQCPvv15SfQap4rVhWpgTijEq4vbu1H_VTg/exec', {
+        method: 'POST',
+        body: formDataForSheet,
+        mode: 'no-cors' // This is important for cross-origin requests to Google Apps Script
+      });
+
+      // Since we're using 'no-cors', we can't access the response details
+      // We'll assume it was successful if we get here without an error
       setSubmitMessage('Thank you for your message. We\'ll get back to you soon!');
       setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitMessage(`Oops! Something went wrong. Please try again later.`);
+    }
+    setTimeout(() => {
+      setSubmitMessage(null);
+    }, 5000);
+
+    setIsSubmitting(false);
   };
     
   return (

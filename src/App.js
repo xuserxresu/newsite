@@ -8,8 +8,6 @@ import Solutions from './components/Solutions'; // Add this import
 import About from './components/About'; // Change this line back to About
 import Contact from './components/Contact';
 import BytesAndThoughts from './components/BytesAndThoughts';
-import CybersecurityArticle from './components/CybersecurityArticle';
-import CloudComputingArticle from './components/CloudComputingArticle';
 import FloatingBlobs from './components/FloatingBlobs';
 import './App.css';
 import 'atropos/css';
@@ -52,9 +50,7 @@ function AppRoutes() {
           <Route path="/about" element={<About />} /> {/* Change this line back to About */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<BytesAndThoughts />} />
-          <Route path="/blog/cybersecurity-best-practices" element={<CybersecurityArticle />} />
-          <Route path="/blog/future-of-cloud-computing" element={<CloudComputingArticle />} />
-        </Routes>
+          </Routes>
       </CSSTransition>
     </TransitionGroup>
   );
