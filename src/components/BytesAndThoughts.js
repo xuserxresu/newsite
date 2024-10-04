@@ -4,24 +4,8 @@ import './BytesAndThoughts.css';
 
 function BytesAndThoughts() {
   const samplePosts = [
-    {
-      id: 1,
-      title: "The Future of Cloud Computing: Trends to Watch",
-      date: "May 15, 2024",
-      excerpt: "As we move further into the digital age, cloud computing continues to evolve at a rapid pace. In this post, we'll explore the emerging trends that are shaping the future of cloud technology...",
-      author: "Ahmed Sharfi",
-      tags: ["Cloud Computing", "Technology Trends", "IT Infrastructure"],
-      link: "/blog/future-of-cloud-computing"
-    },
-    {
-      id: 2,
-      title: "Cybersecurity Best Practices for Small Businesses",
-      date: "April 28, 2024",
-      excerpt: "Small businesses are increasingly becoming targets for cyberattacks. Learn about the essential cybersecurity practices that can help protect your business from potential threats...",
-      author: "Ahmed Sharfi",
-      tags: ["Cybersecurity", "Small Business", "IT Security"],
-      link: "/blog/cybersecurity-best-practices"
-    }
+
+
   ];
 
   return (
